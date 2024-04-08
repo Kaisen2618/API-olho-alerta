@@ -1,1 +1,11 @@
-npm init -y
+INSTALAR PNPM E NODE.JS
+
+UTILIZAR COMANDO npm init -y
+UTILIZAR COMANDO npm i express
+UTILIZAR COMANDO npm i prisma -D
+UTILIZAR COMANDO npm i zod
+UTILIZAR COMANDO npx prisma init
+UTILIZAR COMANDO npm i nodemon -D
+UTILIZAR COMANDO npm i @prisma/client
+UTILIZAR COMANDO npx prisma migrate dev --name init
+UTILIZAR COMANDO npm run dev
