@@ -1,4 +1,5 @@
 INSTALAR PNPM E NODE.JS
+
 UTILIZAR COMANDO npm init -y
 UTILIZAR COMANDO npm i express
 UTILIZAR COMANDO npm i prisma -D
