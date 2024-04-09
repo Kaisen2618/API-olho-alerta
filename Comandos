@@ -4,6 +4,7 @@ UTILIZAR COMANDO npm init -y
 UTILIZAR COMANDO npm i express
 UTILIZAR COMANDO npm i prisma -D
 UTILIZAR COMANDO npm i zod
+UTILIZAR COMANDO npm i cors
 UTILIZAR COMANDO npx prisma init
 UTILIZAR COMANDO npm i nodemon -D
 UTILIZAR COMANDO npm i @prisma/client
