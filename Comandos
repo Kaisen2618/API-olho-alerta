@@ -8,4 +8,6 @@ UTILIZAR COMANDO npx prisma init
 UTILIZAR COMANDO npm i nodemon -D
 UTILIZAR COMANDO npm i @prisma/client
 UTILIZAR COMANDO npx prisma migrate dev --name init
+UTILIZAR COMANDO npm i swagger-jsdoc swagger-ui-express
+UTILIZAR COMANDO npm i swagger-autogen -D
 UTILIZAR COMANDO npm run dev
