@@ -1,0 +1,135 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Olho Alerta API",
+      "description": "Esta API foi desenvolvida para ser utilizada no site do Olho Alerta, onde os usuários podem salvar casos de denúncias, visualizar no mapa o que está acontecendo e visualizar detalhes de cada caso. "
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/denuncias": {
+        "get": {
+          "summary": "Retorna todas as denúncias",
+          "description": "Retorna uma lista de todas as denúncias",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Nenhuma denúncia encontrada"
+            },
+            "500": {
+              "description": "Erro ao recuperar denúncias"
+            }
+          }
+        },
+        "post": {
+          "summary": "Cria uma nova denúncia",
+          "description": "Cria uma nova denúncia com base nos dados fornecidos no corpo da solicitação",
+          "responses": {
+            "201": {
+              "description": "Created"
+            },
+            "400": {
+              "description": "Bad Request"
+            }
+          },
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "latitude": {
+                    "type": "string"
+                  },
+                  "longitude": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "required": ["title", "latitude", "longitude", "description"]
+              }
+            }
+          ]
+        }
+      },
+      "/denuncias/{id}": {
+        "get": {
+          "summary": "Retorna uma denúncia pelo ID",
+          "description": "Retorna uma denúncia com base no ID fornecido",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Nenhuma denúncia encontrada"
+            },
+            "500": {
+              "description": "Erro ao recuperar denúncias"
+            }
+          }
+        }
+      }
+    }
+  }
+  
