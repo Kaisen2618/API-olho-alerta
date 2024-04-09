@@ -39,18 +39,43 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try{
     //Buscar todas as denuncias no banco de dados usando o prisma
-    const denuncias = await prisma.denuncia.findMany()
+    const denuncia = await prisma.denuncia.findMany()
 
     //verificar se há denuncias
-    if(denuncias.length === 0){
+    if(denuncia.length === 0) {
         return res.status(404).json({message:'Nenhuma denuncia encontrada'})
     }
 
+    res.json(denuncia)
     //retornar as denuncias como resposta no formato JSON
-    res.json(denuncias)
     }catch (error) {
+        console.error('Erro ao recuperar denuncias:', error)
         res.status(500).json({error:'Erro ao recuperar as denuncias'})
     }
+})
+//Rota para obter uma única denúncia
+router.get('/:id', async (req,res) => {
+    try{
+        const {id} = req.params
+
+    //buscar uma unica denuncia
+    const denuncia = await prisma.denuncia.findMany({
+        where: {
+            id
+        }
+    })
+
+    //Verificar se há denuncia
+    if (denuncia.length === 0) {
+        return res.status(400).json({message: 'nenhuma denuncia encontrada'})
+    }
+
+    res.json(denuncia)
+     }catch (error) {
+        console.error('Erro ao recuperar denuncias', error);
+        res.status(500).json({error: 'Erro ao recuperar denúncias'})
+    }
+      
 })
 
 module.exports = router
