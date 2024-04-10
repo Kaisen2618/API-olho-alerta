@@ -71,6 +71,8 @@ router.get('/:id', async (req,res) => {
     }
 
     res.json(denuncia)
+    
+    //retornar as denuncias como resposta no formato JSON
      }catch (error) {
         console.error('Erro ao recuperar denuncias', error);
         res.status(500).json({error: 'Erro ao recuperar denúncias'})

@@ -5,7 +5,7 @@
       "title": "Olho Alerta API",
       "description": "Esta API foi desenvolvida para ser utilizada no site do Olho Alerta, onde os usuários podem salvar casos de denúncias, visualizar no mapa o que está acontecendo e visualizar detalhes de cada caso. "
     },
-    "host": "localhost:3000",
+    "host": "localhost:3333",
     "basePath": "/",
     "schemes": [
       "http"

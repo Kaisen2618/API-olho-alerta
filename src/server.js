@@ -1,11 +1,15 @@
 //importando as bibliotecas
 const express = require('express');
 const denunciasRouter = require('./routes/denuncias')
-
+const cors = require('cors')
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require ('./swagger_output.json')
 
 const app = express()
+
+app.use(cors({
+     origin:'*'
+}));
 
 app.use(express.json())
 
